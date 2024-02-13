@@ -7,7 +7,6 @@ G = (0, 50, 0)
 B = (0, 0, 50)
 
 COLORS = (R, G, B)
-
 pixels = neopixel.NeoPixel(board.GP22, 1)
 
 while True:
