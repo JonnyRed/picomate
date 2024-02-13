@@ -7,6 +7,9 @@ of the [Picomate board][]
 
 ![Pico Board](./images/picomateboard.jpg)
 
+[seeed studio](https://www.seeedstudio.com/) provides [Grove devices][]
+An [Introduction to Grove][] and how to use Grove connectors.
+
 ## Installation
 
 **_Make sure that a data usb cable is used when connecting the Pico to
@@ -56,7 +59,33 @@ The `UF.2` code base is to be found at [pico W uf2][]
 
 ## Blink RGB LED
 
+The make of the LED `WS2812 RGB LED`
+
+## Rotary Encoder
+
+DeskPi PicoMate has an incremental **[rotary encoder][]** pre-wired to the Pico,
+which converts the motion of the switch (clockwise or counter clockwise)
+into an output signal that can be used to determine what direction the
+knob is being rotated.
+
+A **[rotary encoder][]** is a device that measures the angular position
+(rotation) of a shaft. It converts it into a signal that can be used to
+find the position and direction of rotation. They are primarily used in
+motors to provide better control and in user interfaces to replace
+potentiometers.
+
+|         Rotary Encoder Pin          | On Pico |
+|:-----------------------------------:|:-------:|
+|                  A                  |   GP7   |
+|                  B                  |   GP6   |
+| Switch(Optional, Active High Level) |  GP26   |
+
 ----
+[Introduction to Grove]:https://www.seeedstudio.com/document/pdf/Introduction%20to%20Grove.pdf
+
+[Grove devices]:https://www.seeedstudio.com/catalogsearch/result/?q=grove
+
+[rotary encoder]:https://en.wikipedia.org/wiki/Rotary_encoder
 
 [CircuitPython core modules]:https://docs.circuitpython.org/en/latest/shared-bindings/index.html#core-modules
 
