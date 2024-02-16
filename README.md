@@ -32,6 +32,101 @@ with rp2040
 * UID:E6616408432F8E32
 * MAC:28:CD:C1:09:0D:E2
 
+## Grove
+
+### Interface of Grove Pico modules
+
+You may notice that there're 4 color of the Grove cable.
+
+| Pin   | Colour of Grove cable                             |
+|-------|---------------------------------------------------|
+| pin 1 | Yellow (for example, SCL on I2C Grove Connectors) |
+| pin 2 | White (for example, SDA on I2C Grove Connectors)  |
+| pin 3 | Red - VCC on all Grove Connectors                 |
+| pin 4 | Black - GND on all Grove Connectors               |
+
+## Grove Pico Interface types
+
+There're mainly 4 type of Interface of Grove modules.
+
+### Grove Pico Digital
+
+* A digital Grove connector consists of the standard four lines coming into the Grove plug.
+* The two signal lines are generically called D0 and D1.
+  * Most modules only use D0, but some do (like the LED Bar Grove display) use both.
+* Often base units will have the first connector called D0 and the second called D1 and they will be wired D0/D1 and then D1/D2, etc.
+* Examples of Grove Digital modules are:
+  * Switch Modules,
+  * Fan Module,
+  * LED Module.
+
+| Pin   | Function |              Note               |
+|-------|:--------:|:-------------------------------:|
+| pin 1 |    Dn    |  Primary Digital Input/Output   |
+| pin 2 |   Dn+1   | Secondary Digital Input/Output  |
+| pin 3 |   VCC    | Power for Grove Module, 5V/3.3V |
+| pin 4 |   GND    |             Ground              |
+
+### Grove Pico Analog
+
+* An Grove Analog connector consists of the standard four lines coming into the Grove plug.
+* The two signal lines are generically called A0 and A1.
+  * Most modules only use A0. Often base units will have the first connector called A0 and the second called A1 and they will be wired A0/A1 and then A1/A2
+
+| Pin   | Function |              Note               |
+|-------|:--------:|:-------------------------------:|
+| pin 1 |    An    |      Primary Analog Input       |
+| pin 2 |   An+1   |     Secondary Analog Input      |
+| pin 3 |   VCC    | Power for Grove Module, 5V/3.3V |
+| pin 4 |   GND    |             Ground              |
+
+### Grove Pico UART
+
+* The Grove UART module is a specialized version of a Grove Digital Module.
+* It uses both Pin 1 and Pin 2 for the serial input and transmit.
+* The Grove UART plug is labeled from the base unit point of view.
+  * Pin 1 is the RX line (which the base unit uses to receive data, so it is an input)
+  * Pin 2 is the TX line (which the base unit uses to transmit data to the Grove module).
+
+| Pin   | Function |              Note               |
+|-------|:--------:|:-------------------------------:|
+| pin 1 |    RX    |         Serial Receive          |
+| pin 2 |    TX    |         Serial Transmit         |
+| pin 3 |   VCC    | Power for Grove Module, 5V/3.3V |
+| pin 4 |   GND    |             Ground              |
+
+### Grove Pico I2C
+
+* There are many types of I2C Grove sensors available.
+* Most are 5V/3.3V devices
+* The Grove I2C connector has the standard layout.
+  * Pin 1 is the SCL signal and
+  * Pin 2 is the SDA signal.
+  * Power and Ground are the same as the other connectors.
+* This is another special version of the Grove Digital Connector.
+  * Often the I2C bus on a controller (like the ESP8266, Raspberry Pi
+  and the Arduino) just uses Digital I/O pins to implement the I2C bus.
+  * The pins on the Raspberry Pi and Arduino are special with
+  hardware support for the I2C bus.
+
+| Pin   | Function |              Note               |
+|-------|:--------:|:-------------------------------:|
+| pin 1 |   SCL    |            I2C Clock            |
+| pin 2 |   SDA    |            I2C Data             |
+| pin 3 |   VCC    | Power for Grove Module, 5V/3.3V |
+| pin 4 |   GND    |             Ground              |
+
+![Grove Shield](.\images\GrovePicoShield01.png)
+
+1. Analog Ports: include 3 analog ports, A0, A1, A2.
+2. Digital Ports: include 3 digital ports, D16, D18, D20.
+3. UART Port: 2 UART port.
+4. I2C Ports: 2 I2C ports.
+5. Power Switch: 5V/3.3V selectable power switch.
+6. SPI port: 1 spi0 port.
+
+Dimension: 56mm * 56mm
+
 ## Circuit Python
 
 [CircuitPython][] is a programming language designed to simplify
