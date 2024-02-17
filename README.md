@@ -175,6 +175,38 @@ potentiometers.
 |                  B                  |   GP6   |
 | Switch(Optional, Active High Level) |  GP26   |
 
+## Buzzer
+
+DeskPi PicoMate has a buzzer pre-wired to GP27 on the Pico. To control the buzzer from CircuitPython we will use its built in PWM, or pulse-width modulation, signal generation capabilities.
+
+Buzzer uses **pulse width modulation** (PWM)
+
+### Pulse Width Modulation (PWM)
+
+* Widely used in various applications, including sophisticated control circuitry.
+* Commonly employed for:
+  * Dimming RGB LEDs.
+  * Controlling servo direction.
+* Achieves a range of outcomes by varying the high signal time analogously.
+* Signal can only be high (usually 5V) or low (ground) at any moment.
+* Proportion of high signal time can be adjusted consistently over a time interval.
+
+Certainly! Here's a concise summary of the note on **Duty Cycle for PWM**:
+
+### Duty Cycle
+
+* Represents the proportion of time a digital signal is in the "on" state (high) over a specific interval.
+* Measured in percentage.
+* Describes how much time the signal spends in the "on" state relative to the entire period.
+* The period is the inverse of the waveform frequency.
+
+* Examples:
+  * **50% Duty Cycle**: Signal spends equal time "on" and "off," resembling an ideal square wave.
+  * **>50% Duty Cycle**: More time in the "on" state than the "off" state.
+  * **<50% Duty Cycle**: More time in the "off" state than the "on" state.
+
+![Duty Cycle Graph](./images/DutyCycle.jpg)
+
 ----
 [Introduction to Grove]:https://www.seeedstudio.com/document/pdf/Introduction%20to%20Grove.pdf
 
