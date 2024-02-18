@@ -140,9 +140,145 @@ Version of [CircuitPython][] executing
 
 ### Core Modules
 
-The [CircuitPython core modules][] are intended on being consistent across ports and boards. A module may not exist on a port/board if no underlying hardware support is present or if flash space is limited. For example, a microcontroller without analog features will not have `analogio`.
+The [CircuitPython core modules][] are intended on being consistent
+across ports and boards. A module may not exist on a port/board if
+no underlying hardware support is present or if flash space is limited.
+For example, a microcontroller without analog features will not
+have `analogio`.
 
-[CircuitPython 8.2 Documentation][] is the starting point fo [CircuitPython essentials][].
+[CircuitPython 8.2 Documentation][] is the starting point for
+[CircuitPython essentials][].
+
+## Board
+
+* **CircuitPython Pins and Modules**:
+  * **Accessing Pins**:
+    * When using hardware peripherals with a CircuitPython-compatible microcontroller, you'll utilize pins.
+    * The `board` module provides access to board-specific objects, including pins.
+    * Pin labels are typically located next to the physical pins on your microcontroller board.
+    * You can access a pin by its label.
+  * **Multiple Names for Pins**:
+    * There are often multiple names for a given pin.
+    * For example, a pin labelled "A0" might also be accessible in CircuitPython as both "A0" and "D0."
+  * **Discovering Available Pins**:
+    * To find all available board-specific objects and pins for your board:
+            1. Enter the REPL (>>>) in CircuitPython.
+            2. Run the following commands:
+
+                ```python
+                import board
+                dir(board)
+                ```
+
+    * This will display a list of pins and other objects specific to your board.
+
+### Pico W Pin names
+
+```python
+['__class__', '__name__', 'A0', 'A1', 'A2', 'A3', 'GP0', 'GP1', 'GP10',
+ 'GP11', 'GP12', 'GP13', 'GP14', 'GP15', 'GP16', 'GP17', 'GP18', 'GP19', 
+ 'GP2', 'GP20', 'GP21', 'GP22', 'GP26', 'GP26_A0', 'GP27', 'GP27_A1', 
+ 'GP28', 'GP28_A2', 'GP3', 'GP4', 'GP5', 'GP6', 'GP7', 'GP8', 'GP9', 
+ 'LED', 'SMPS_MODE', 'STEMMA_I2C', 'VBUS_SENSE', 'VOLTAGE_MONITOR', 
+ 'board_id']
+```
+
+### Pin Map Script
+
+Certainly! Here's a concise summary:
+
+* **Multiple Pin Names**:
+  * CircuitPython-compatible microcontroller boards often have pins with multiple names.
+  * Typically, only one name is labeled on the physical board.
+  * To discover other available pin names:
+    * Use the provided script.
+    * Each line printed to the serial console contains the set of names for a specific pin.
+* **Project Bundle Instructions**:
+  * The bundle includes two folders, one for each of the latest CircuitPython versions.
+  * Ensure you use the files matching your CircuitPython version.
+  * To use the bundle:
+        1. Copy the contents of the relevant CircuitPython version folder from the zip file to your CIRCUITPY drive.
+  * Contents within each version folder vary.
+
+Please refer to [Pins and Modules][]
+
+```text
+board.A0 board.GP26 board.GP26_A0 (GPIO26)
+board.A1 board.GP27 board.GP27_A1 (GPIO27)
+board.A2 board.GP28 board.GP28_A2 (GPIO28)
+board.A3 board.VOLTAGE_MONITOR (GPIO29)
+board.GP0 (GPIO0)
+board.GP1 (GPIO1)
+board.GP10 (GPIO10)
+board.GP11 (GPIO11)
+board.GP12 (GPIO12)
+board.GP13 (GPIO13)
+board.GP14 (GPIO14)
+board.GP15 (GPIO15)
+board.GP16 (GPIO16)
+board.GP17 (GPIO17)
+board.GP18 (GPIO18)
+board.GP19 (GPIO19)
+board.GP2 (GPIO2)
+board.GP20 (GPIO20)
+board.GP21 (GPIO21)
+board.GP22 (GPIO22)
+board.GP3 (GPIO3)
+board.GP4 (GPIO4)
+board.GP5 (GPIO5)
+board.GP6 (GPIO6)
+board.GP7 (GPIO7)
+board.GP8 (GPIO8)
+board.GP9 (GPIO9)
+board.LED (CYW0)
+board.SMPS_MODE (CYW1)
+board.VBUS_SENSE (CYW2)
+```
+
+[Pins and Modules]:https://learn.adafruit.com/circuitpython-essentials/circuitpython-pins-and-modules
+
+### Microcontroller Pin Names
+
+* **CircuitPython Pin Names**:
+  * The pin names available in the CircuitPython `board` module differ
+  from the actual names of the pins on the microcontroller.
+  * Board pin names serve as aliases to the microcontroller pin names.
+  * Microcontroller datasheets typically provide pinouts with specific
+  names (e.g., "PA18" or "GPIO5").
+  * To access the actual microcontroller pin names in CircuitPython,
+  use the `microcontroller` module.
+  * Similar to the `board` module, you can run `dir(microcontroller.pin)`
+  in the REPL to obtain a list of microcontroller pin names.
+
+```python
+['__class__', 'CYW0', 'CYW1', 'CYW2', 'GPIO0', 'GPIO1', 'GPIO10', 
+'GPIO11', 'GPIO12', 'GPIO13', 'GPIO14', 'GPIO15', 'GPIO16', 'GPIO17', 
+'GPIO18', 'GPIO19', 'GPIO2', 'GPIO20', 'GPIO21', 'GPIO22', 'GPIO26', 
+'GPIO27', 'GPIO28', 'GPIO29', 'GPIO3', 'GPIO4', 'GPIO5', 'GPIO6', 'GPIO7', 
+'GPIO8', 'GPIO9']
+```
+
+### Module Support Matrix
+
+[All modules][] ,available for which boards
+
+### Supported Pico W Modules
+
+```text
+_asyncio, _bleio, _pixelmap, adafruit_bus_device, adafruit_pixelbuf, 
+aesio, alarm, analogbufio, analogio, array, atexit, audiobusio, audiocore, audiomixer, audiomp3, audiopwmio, binascii, bitbangio, bitmaptools, 
+bitops, board, builtins, builtins.pow3, busdisplay, busio, busio.SPI, 
+busio.UART, codeop, collections, countio, cyw43, digitalio, displayio, epaperdisplay, errno, floppyio, fontio, fourwire, framebufferio, getpass, 
+gifio, hashlib, i2cdisplaybus, i2ctarget, imagecapture, io, ipaddress, 
+jpegio, json, keypad, keypad.KeyMatrix, keypad.Keys, 
+keypad.ShiftRegisterKeys, locale, math, mdns, memorymap, microcontroller, 
+msgpack, neopixel_write, nvm, onewireio, os, os.getenv, paralleldisplaybus, 
+picodvi, pulseio, pwmio, qrio, rainbowio, random, re, rgbmatrix, rotaryio, 
+rp2pio, rtc, sdcardio, select, sharpdisplay, socketpool, ssl, storage, 
+struct, supervisor, synthio, sys, terminalio, time, touchio, traceback, 
+ulab, usb, usb_cdc, usb_hid, usb_host, usb_midi, usb_video, vectorio, 
+warnings, watchdog, wifi, zlib
+```
 
 ## Mu editor
 
@@ -208,6 +344,9 @@ Buzzer uses **pulse width modulation** (PWM)
 ![Duty Cycle Graph](./images/DutyCycle.jpg)
 
 ----
+
+[All modules]:https://docs.circuitpython.org/en/latest/shared-bindings/support_matrix.html#module-support-matrix-which-modules-are-available-on-which-boards
+
 [Sparkfun]:https://www.sparkfun.com/
 
 [Sparkfun Pulse Width Modulation]:https://learn.sparkfun.com/tutorials/pulse-width-modulation
