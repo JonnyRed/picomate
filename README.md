@@ -266,9 +266,11 @@ board.VBUS_SENSE (CYW2)
 
 ```text
 _asyncio, _bleio, _pixelmap, adafruit_bus_device, adafruit_pixelbuf, 
-aesio, alarm, analogbufio, analogio, array, atexit, audiobusio, audiocore, audiomixer, audiomp3, audiopwmio, binascii, bitbangio, bitmaptools, 
+aesio, alarm, analogbufio, analogio, array, atexit, audiobusio, audiocore, 
+audiomixer, audiomp3, audiopwmio, binascii, bitbangio, bitmaptools, 
 bitops, board, builtins, builtins.pow3, busdisplay, busio, busio.SPI, 
-busio.UART, codeop, collections, countio, cyw43, digitalio, displayio, epaperdisplay, errno, floppyio, fontio, fourwire, framebufferio, getpass, 
+busio.UART, codeop, collections, countio, cyw43, digitalio, displayio, 
+epaperdisplay, errno, floppyio, fontio, fourwire, framebufferio, getpass, 
 gifio, hashlib, i2cdisplaybus, i2ctarget, imagecapture, io, ipaddress, 
 jpegio, json, keypad, keypad.KeyMatrix, keypad.Keys, 
 keypad.ShiftRegisterKeys, locale, math, mdns, memorymap, microcontroller, 
