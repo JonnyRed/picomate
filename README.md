@@ -151,6 +151,9 @@ have `analogio`.
 
 ## Board
 
+[`board` API][] container for board base pin names. These will vary from
+board to board so don’t expect portability when using this module.
+
 * **CircuitPython Pins and Modules**:
   * **Accessing Pins**:
     * When using hardware peripherals with a CircuitPython-compatible microcontroller, you'll utilize pins.
@@ -346,6 +349,7 @@ Buzzer uses **pulse width modulation** (PWM)
 ![Duty Cycle Graph](./images/DutyCycle.jpg)
 
 ----
+[`board` API]:https://docs.circuitpython.org/en/latest/shared-bindings/board/index.html#module-board
 
 [All modules]:https://docs.circuitpython.org/en/latest/shared-bindings/support_matrix.html#module-support-matrix-which-modules-are-available-on-which-boards
 
