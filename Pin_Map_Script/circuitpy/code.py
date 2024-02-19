@@ -8,6 +8,7 @@
 """CircuitPython Essentials Pin Map Script"""
 import microcontroller
 import board
+
 try:
     import cyw43  # raspberrypi
 except ImportError:
@@ -15,8 +16,9 @@ except ImportError:
 
 board_pins = []
 for pin in dir(microcontroller.pin):
-    if (isinstance(getattr(microcontroller.pin, pin), microcontroller.Pin) or
-        (cyw43 and isinstance(getattr(microcontroller.pin, pin), cyw43.CywPin))):
+    if isinstance(getattr(microcontroller.pin, pin), microcontroller.Pin) or (
+        cyw43 and isinstance(getattr(microcontroller.pin, pin), cyw43.CywPin)
+    ):
         pins = []
         for alias in dir(board):
             if getattr(board, alias) is getattr(microcontroller.pin, pin):
